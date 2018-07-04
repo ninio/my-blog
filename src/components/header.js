@@ -1,33 +1,40 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import github from '../img/github-icon.svg';
+import logo from '../img/logo.svg';
+
+import network from '../img/network.svg';
+import nodes from '../img/nodes.svg';
+import phone from '../img/phone.svg';
+
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
+  <nav className="navbar is-transparent">
+    <div className="container">
+      <div className="navbar-brand">
+        <Link to="/" className="navbar-item">
+          <figure className="image site-logo">
+            <img src={nodes} alt="Server nodes" />
+            <img src={network} alt="Network" />
+            <img src={phone} alt="Phone" />
+            <figcaption>{ siteTitle }</figcaption>
+          </figure>
         </Link>
-      </h1>
+      </div>
+      <div className="navbar-start">
+        <Link className="navbar-item" to="/hey">
+          About
+        </Link>
+      </div>
+      <div className="navbar-end">
+        <a className="navbar-item" href="https://github.com/ninio/" target="_blank" rel="noopener noreferrer">
+          <span className="icon">
+            <img src={github} alt="Github" />
+          </span>
+        </a>
+      </div>
     </div>
-  </div>
+  </nav>
 )
 
-export default Header
+export default Header;
